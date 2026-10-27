@@ -1,0 +1,31 @@
+:root { color-scheme: light; --ink: #202c3c; --muted: #606c7b; --line: #dce2e9; --blue: #245cb2; }
+* { box-sizing: border-box; }
+body { margin: 0; background: #f4f6f9; color: var(--ink); font: 16px/1.6 system-ui, sans-serif; }
+button, input, select, textarea { font: inherit; }
+button { border: 1px solid var(--blue); border-radius: 6px; background: var(--blue); color: white; padding: 9px 16px; cursor: pointer; text-decoration: none; display: inline-block; }
+button.secondary { background: white; color: var(--blue); }
+button:disabled { cursor: default; opacity: .45; }
+:focus-visible { outline: 3px solid #86b8ff; outline-offset: 3px; }
+[hidden] { display: none !important; }
+.container { max-width: 1240px; margin: auto; padding: 28px 24px 56px; }
+.actions, .pagination { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; }
+h1 { font-size: clamp(1.6rem, 3vw, 2.2rem); line-height: 1.25; margin: 0 0 12px; }
+h2 { font-size: 1.35rem; margin: 0 0 14px; }
+h3 { font-size: 1.07rem; margin: 0 0 8px; }
+p { margin: 0 0 12px; }
+.muted { color: var(--muted); }
+.panel { background: white; border: 1px solid var(--line); border-radius: 10px; padding: 24px; }
+.workspace { display: grid; grid-template-columns: minmax(260px, 340px) minmax(0, 1fr); gap: 24px; align-items: start; }
+.field { margin-bottom: 16px; }
+label { display: block; font-weight: 600; margin-bottom: 6px; }
+input, select, textarea { width: 100%; padding: 9px 11px; color: var(--ink); background: white; border: 1px solid #b5bfcb; border-radius: 6px; }
+textarea { resize: vertical; }
+.cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.item-card { min-width: 0; border: 1px solid var(--line); border-radius: 8px; padding: 18px; overflow-wrap: anywhere; }
+.item-card p { margin-bottom: 8px; }
+.tag { display: inline-block; background: #edf3fd; color: #245294; border-radius: 4px; padding: 2px 8px; font-size: .87rem; }
+.amount { font-size: 1.2rem; font-weight: 700; }
+.pagination { justify-content: center; margin-top: 24px; }
+@media (max-width: 900px) { .workspace { grid-template-columns: 1fr; } }
+@media (max-width: 560px) { .container { padding: 16px 14px 36px; } .panel { padding: 18px; } .cards { grid-template-columns: 1fr; } .pagination { gap: 8px; } }
+@media print { body { background: white; } .container { max-width: none; padding: 0; } @page { size: A4; margin: 18mm; } }

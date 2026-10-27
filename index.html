@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đề 01 - Quản lý chi tiêu sinh viên</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+  </head>
+  <body>
+    <main class="container">
+      <h1>Quản lý chi tiêu sinh viên</h1>
+
+      <div class="workspace">
+        <section class="panel" aria-labelledby="formTitle">
+          <h2 id="formTitle">Thêm mục chi tiêu</h2>
+          <form id="itemForm">
+            <div class="field">
+              <label for="title">Nội dung chi tiêu *</label>
+              <input id="title" name="title" type="text" required>
+            </div>
+            <div class="field">
+              <label for="category">Nhóm chi tiêu *</label>
+              <select id="category" name="category" required>
+                <option value="">Chọn nhóm chi tiêu</option>
+                <option value="Ăn uống">Ăn uống</option>
+                <option value="Đi lại">Đi lại</option>
+                <option value="Học tập">Học tập</option>
+                <option value="Mua sắm">Mua sắm</option>
+                <option value="Giải trí">Giải trí</option>
+                <option value="Sinh hoạt">Sinh hoạt</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="amount">Số tiền (VNĐ) *</label>
+              <input id="amount" name="amount" type="number" required>
+            </div>
+            <div class="field">
+              <label for="date">Ngày chi *</label>
+              <input id="date" name="date" type="date" required>
+            </div>
+            <div class="field">
+              <label for="note">Ghi chú</label>
+              <textarea id="note" name="note" rows="3"></textarea>
+            </div>
+            <div class="actions">
+              <button id="saveBtn" type="submit">Thêm mục chi tiêu</button>
+              <button id="cancelEditBtn" type="button" class="secondary" hidden>Hủy sửa</button>
+            </div>
+          </form>
+        </section>
+
+        <section class="panel" aria-labelledby="listTitle">
+          <h2 id="listTitle">Danh sách mục chi tiêu</h2>
+          <div class="field">
+            <label for="filterSelect">Lọc theo nhóm chi tiêu</label>
+            <select id="filterSelect">
+              <option value="">Tất cả</option>
+              <option value="Ăn uống">Ăn uống</option>
+              <option value="Đi lại">Đi lại</option>
+              <option value="Học tập">Học tập</option>
+              <option value="Mua sắm">Mua sắm</option>
+              <option value="Giải trí">Giải trí</option>
+              <option value="Sinh hoạt">Sinh hoạt</option>
+            </select>
+          </div>
+          <p id="loading" class="muted" role="status" hidden>Đang tải dữ liệu...</p>
+          <div id="items" class="cards"></div>
+          <p id="emptyState" class="muted" hidden>Không có dữ liệu phù hợp.</p>
+          <nav class="pagination" aria-label="Phân trang danh sách">
+            <button id="prevPageBtn" type="button" class="secondary" disabled>Trước</button>
+            <span id="pageInfo" aria-live="polite">Trang 0 / 0</span>
+            <button id="nextPageBtn" type="button" class="secondary" disabled>Sau</button>
+          </nav>
+        </section>
+      </div>
+    </main>
+
+    <script type="module" src="assets/js/app.js"></script>
+  </body>
+</html>
